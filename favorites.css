@@ -1,0 +1,71 @@
+/* Center the favorites container properly */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    margin: 5% auto; /* Ensures proper centering */
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* List Styling with Location Pin */
+#favoritesList {
+    list-style: none;
+    padding: 0;
+}
+
+#favoritesList li::before {
+    content: "📍"; /* Location pin icon */
+    margin-right: 8px;
+}
+
+/* Aligning the text area and buttons */
+#favoritesList li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    flex-wrap:nowrap;
+    margin-bottom: 10px;
+}
+
+#favoritesList li textarea {
+    flex-grow: 1;
+    min-width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Button Adjustments */
+#favoritesList li button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#favoritesList li button:hover {
+    background: #ff6f61;
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+.save-button {
+    background: #ff8c8c;
+    color: white;
+}
+
+.remove-button {
+    background: #ff6666;
+    color: white;
+}
