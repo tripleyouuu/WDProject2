@@ -34,6 +34,7 @@ Country Finder is a simple web app that allows users to search by country name (
 ## 🕰️ Future Scope
 
 If I return to this project in the future, I would like to make the following improvements to it:
+- Make the website responsive across various screen sizes, currently it is only optimized for laptops
 - Use further APIs to integrate weather finding & travel planning features, thereby expanding its usage
 - Turn the pop-up alerts into actual modals to get a notification effect that self-collapses without manual intervention
 - Display favorites in a more robust, tabulated form with all relevant details
