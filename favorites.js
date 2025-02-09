@@ -1,6 +1,6 @@
 const favoritesList = document.getElementById('favoritesList');
 
-// Load favorite countries from local storage
+// loading favourites from localstorage
 function loadFavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favoritesList.innerHTML = "";
@@ -24,19 +24,19 @@ function loadFavorites() {
     });
 }
 
-// Save notes in local storage
+// saving notes in localstorage
 function saveNotes(country) {
     let notes = document.getElementById(`notes-${country}`).value;
     localStorage.setItem(`notes-${country}`, notes);
     alert("Notes saved!");
 }
 
-// Retrieve notes from local storage
+// loading notes from localstorage
 function getNotes(country) {
     return localStorage.getItem(`notes-${country}`) || "";
 }
 
-// Remove country from favorites
+// deleting a favorited country
 function removeFromFavorites(country) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favorites = favorites.filter(c => c !== country);
@@ -44,8 +44,7 @@ function removeFromFavorites(country) {
     localStorage.setItem("favorites", JSON.stringify(favorites));
     localStorage.removeItem(`notes-${country}`);
     
-    loadFavorites(); // Refresh list immediately
+    loadFavorites();
 }
 
-// Load favorites on page load
 document.addEventListener("DOMContentLoaded", loadFavorites);
