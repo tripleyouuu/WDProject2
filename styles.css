@@ -1,22 +1,19 @@
-/* General Styling */
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
 }
 
 body {
     font-family: "Athiti", serif;
     background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
-    background-size: cover;  /* Ensures it covers the full screen */
-    background-attachment: fixed;  /* Prevents scrolling effect */
-    background-repeat: no-repeat;  /* Stops tiling */
-    background-position: center;  /* Centers the gradient */
-    min-height: 100vh;  /* Ensures it fills the viewport height */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
 }
-
 
 .container {
     
