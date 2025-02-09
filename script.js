@@ -19,8 +19,19 @@ async function fetchCountry(name) {
 
 // display searched country
 function displayCountry(country) {
-    const { name, flags, capital, population, region } = country;
+    const { name, flags, capital, population, region, currencies, languages } = country;
 
+    // currency handling
+    const currencyDetails = currencies 
+        ? Object.values(currencies)
+            .map(curr => `${curr.name} (${curr.symbol})`)
+            .join(", ") 
+        : "N/A";
+    
+    // language handling
+    const languageNames = languages ? Object.values(languages).join(", ") : "N/A";
+
+    // other details
     countryDetails.innerHTML = `
         <div class="country-card">
             <img src="${flags.png}" alt="${name.common} Flag">
@@ -28,6 +39,8 @@ function displayCountry(country) {
             <p>🚩 Capital: ${capital}</p>
             <p>🌍 Region: ${region}</p>
             <p>📊 Population: ${population.toLocaleString()}</p>
+            <p>💰 Currency: ${currencyDetails}</p>
+            <p>🗣️ Languages: ${languageNames}</p>
             <button onclick="addToFavorites('${name.common}')">⭐ Add to Favorites</button>
         </div>
     `;
@@ -55,7 +68,7 @@ function addToFavorites(country) {
     }
 }
 
-// other stuff
+// other stuff:
 
 searchBtn.addEventListener("click", () => {
     if (searchInput.value) fetchCountry(searchInput.value);
